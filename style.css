@@ -1,48 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
+:root {
+  --text-primary-color: #333;
+  --text-secondary-color: #c7365f;
+  --gradient-primary-color: #743682;
+  --gradient-secondary-color: #bf2e34;
+  --bg-color-primary: rgba(255, 255, 255, 0.35);
+  --bg-active-color: rgba(255, 255, 255, 0.4);
+  --white-color: #fff;
+  --gray-color: ##ddd;
+  --btn-primary-color: #444;
+}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: var(--text-primary-color);
+  background-image: linear-gradient(
+    to top left,
+    var(--gradient-primary-color) 0%,
+    var(--gradient-secondary-color) 100%
+  );
 }
 
 /* LAYOUT */
 main {
+  display: flex;
   position: relative;
   width: 100rem;
   height: 60rem;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: var(--bg-color-primary);
   backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
 }
 
 .player {
-  flex: 50%;
-  padding: 9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.75s;
+  flex: 50%;
+  padding: 9rem;
+  transition: all 0.8s;
 }
 
 /* ELEMENTS */
@@ -50,7 +63,7 @@ main {
   position: relative;
   font-size: 4rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
@@ -59,12 +72,12 @@ main {
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: #c7365f;
+  color: var(--text-secondary-color);
   margin-bottom: auto;
 }
 
 .player--active {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--bg-active-color);
 }
 .player--active .name {
   font-weight: 700;
@@ -78,21 +91,21 @@ main {
 }
 
 .current {
-  background-color: #c7365f;
+  background-color: var(--text-secondary-color);
   opacity: 0.8;
-  border-radius: 9px;
-  color: #fff;
+  border-radius: 10px;
+  color: var(--white-color);
   width: 65%;
   padding: 2rem;
   text-align: center;
-  transition: all 0.75s;
+  transition: all 0.8s;
 }
 
 .current-label {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 1.7rem;
-  color: #ddd;
+  color: var(--gray-color);
 }
 
 .current-score {
@@ -104,8 +117,8 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #444;
-  background: none;
+  color: var(--btn-primary-color);
+
   border: none;
   font-family: inherit;
   font-size: 1.8rem;
@@ -114,7 +127,6 @@ main {
   font-weight: 400;
   transition: all 0.2s;
 
-  background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
 
