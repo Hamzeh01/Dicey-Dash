@@ -1,16 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 :root {
-  --text-primary-color: #333;
-  --text-secondary-color: #c7365f;
-  --gradient-primary-color: #743682;
-  --gradient-secondary-color: #bf2e34;
-  --bg-color-primary: rgba(255, 255, 255, 0.35);
-  --bg-active-color: rgba(255, 255, 255, 0.4);
-  --white-color: #fff;
-  --gray-color: ##ddd;
-  --btn-primary-color: #444;
+  --primary-bg-color: #2f2f2f;
+  --secondary-bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #00a8cc;
+  --dice-color: #ff5722;
+  --winner-bg-color: #0d0d0d;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -28,11 +26,11 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
   height: 100vh;
-  color: var(--text-primary-color);
+  color: var(--text-color);
   background-image: linear-gradient(
     to top left,
-    var(--gradient-primary-color) 0%,
-    var(--gradient-secondary-color) 100%
+    var(--primary-bg-color) 0%,
+    var(--secondary-bg-color) 100%
   );
 }
 
@@ -42,7 +40,7 @@ main {
   position: relative;
   width: 100rem;
   height: 60rem;
-  background-color: var(--bg-color-primary);
+  background-color: var(--secondary-bg-color);
   backdrop-filter: blur(200px);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -67,21 +65,24 @@ main {
   word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
+  color: var(--accent-color);
 }
 
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: var(--text-secondary-color);
+  color: var(--accent-color);
   margin-bottom: auto;
 }
 
 .player--active {
-  background-color: var(--bg-active-color);
+  background-color: var(--primary-bg-color);
 }
+
 .player--active .name {
   font-weight: 700;
 }
+
 .player--active .score {
   font-weight: 400;
 }
@@ -91,10 +92,10 @@ main {
 }
 
 .current {
-  background-color: var(--text-secondary-color);
+  background-color: var(--accent-color);
   opacity: 0.8;
   border-radius: 10px;
-  color: var(--white-color);
+  color: var(--text-color);
   width: 65%;
   padding: 2rem;
   text-align: center;
@@ -105,7 +106,7 @@ main {
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 1.7rem;
-  color: var(--gray-color);
+  color: var(--text-color);
 }
 
 .current-score {
@@ -117,8 +118,7 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--btn-primary-color);
-
+  color: var(--text-color);
   border: none;
   font-family: inherit;
   font-size: 1.8rem;
@@ -126,13 +126,11 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn::first-letter {
@@ -144,16 +142,18 @@ main {
 .btn--new {
   top: 4rem;
 }
+
 .btn--roll {
   top: 39.3rem;
 }
+
 .btn--hold {
   top: 46.1rem;
 }
 
 .btn:active {
   transform: translate(-50%, 3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn:focus {
@@ -166,14 +166,14 @@ main {
   top: 16.5rem;
   transform: translateX(-50%);
   height: 10rem;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .player--winner {
-  background-color: #2f2f2f;
+  background-color: var(--winner-bg-color);
 }
 
 .player--winner .name {
   font-weight: 700;
-  color: #c7365f;
+  color: var(--accent-color);
 }
