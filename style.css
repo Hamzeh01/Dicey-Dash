@@ -177,3 +177,7 @@ main {
   font-weight: 700;
   color: var(--accent-color);
 }
+
+.hidden {
+  display: none;
+}
