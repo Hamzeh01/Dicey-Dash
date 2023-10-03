@@ -13,7 +13,7 @@ const btnHold = document.querySelector(".btn--hold");
 
 let totalScores, currentScore, activePlayer, isPlaying;
 
-const init = function () {
+const init = () => {
   totalScores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -36,9 +36,7 @@ const init = function () {
   playerElements[1].classList.remove("player--active");
 };
 
-init();
-
-const switchPlayer = function () {
+const switchPlayer = () => {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
 
@@ -48,16 +46,13 @@ const switchPlayer = function () {
   });
 };
 
-btnRoll.addEventListener("click", () => {
+const rollDice = () => {
   if (isPlaying) {
-    // 1. Generating a random number between 1 and 6 (inclusive)
     const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
-    // 2. Display dice
     diceElement.classList.remove("hidden");
     diceElement.src = `img/dice-${randomDiceNumber}.png`;
-    // 3. Checking for rolled 1
+
     if (randomDiceNumber !== 1) {
-      // Adding dice number to current score
       currentScore += randomDiceNumber;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
@@ -65,27 +60,27 @@ btnRoll.addEventListener("click", () => {
       switchPlayer();
     }
   }
-});
+};
 
-btnHold.addEventListener("click", () => {
+const holdScore = () => {
   if (isPlaying) {
     totalScores[activePlayer] += currentScore;
-    console.log(totalScores[activePlayer]);
     document.getElementById(`score--${activePlayer}`).textContent =
       totalScores[activePlayer];
-    if (totalScores[activePlayer] > MAX_SCORE) {
+
+    if (totalScores[activePlayer] >= MAX_SCORE) {
       isPlaying = false;
       diceElement.classList.add("hidden");
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.remove("player--active");
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.add("player--winner");
+      playerElements[activePlayer].classList.remove("player--active");
+      playerElements[activePlayer].classList.add("player--winner");
     } else {
       switchPlayer();
     }
   }
-});
+};
 
+btnRoll.addEventListener("click", rollDice);
+btnHold.addEventListener("click", holdScore);
 btnNew.addEventListener("click", init);
+
+init();
