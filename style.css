@@ -41,11 +41,12 @@ main {
   position: relative;
   width: 100rem;
   height: 60rem;
-  background: var(--secondary-bg-color); 
-  backdrop-filter: blur(20px); 
+  background: var(--secondary-bg-color);
+  backdrop-filter: blur(20px);
   box-shadow: var(--shadow-color) 0px 5px 15px;
   border-radius: 10px;
   overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .player {
@@ -66,23 +67,19 @@ main {
   word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
-  color: var(--accent-color); 
+  color: var(--accent-color);
 }
 
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: var(--accent-color); 
+  color: var(--accent-color);
   margin-bottom: auto;
 }
 
 .player--active {
-  background: linear-gradient(
-    45deg,
-    #2196f3,
-    #00bcd4
-  ); 
-  box-shadow: var(--shadow-color) 0px 5px 20px; 
+  background: linear-gradient(45deg, #2196f3, #00bcd4);
+  box-shadow: var(--shadow-color) 0px 5px 20px;
 }
 
 .player--active .name {
@@ -98,13 +95,8 @@ main {
 }
 
 .current {
-  background: var(--accent-color); 
-  background: rgba(
-    0,
-    0,
-    0,
-    0.7
-  ); 
+  background: var(--accent-color);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   color: var(--text-color);
   width: 65%;
@@ -181,7 +173,7 @@ main {
 }
 
 .player--winner {
-  background: var(--winner-bg-color); 
+  background: var(--winner-bg-color);
 }
 
 .player--winner .name {
