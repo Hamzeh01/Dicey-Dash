@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 :root {
-  --primary-bg-color: #2f2f2f;
-  --secondary-bg-color: #1a1a1a;
-  --text-color: #ffffff;
-  --accent-color: #00a8cc;
-  --dice-color: #ff5722;
-  --winner-bg-color: #0d0d0d;
+  --primary-bg-color: #2f2f2f; /* Dark background */
+  --secondary-bg-color: #1a1a1a; /* Slightly lighter background */
+  --text-color: #ffffff; /* White text */
+  --active-bg-color: #1976d2; /* Blue for active player */
+  --winner-bg-color: #4caf50; /* Green for winner */
+  --dice-color: #ff5722; /* Dice color */
+  --shadow-color: rgba(0, 0, 0, 0.35); /* Shadow color */
 }
 
 * {
@@ -40,9 +41,9 @@ main {
   position: relative;
   width: 100rem;
   height: 60rem;
-  background-color: var(--secondary-bg-color);
-  backdrop-filter: blur(200px);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: var(--secondary-bg-color); 
+  backdrop-filter: blur(20px); 
+  box-shadow: var(--shadow-color) 0px 5px 15px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -65,18 +66,23 @@ main {
   word-spacing: 2px;
   font-weight: 300;
   margin-bottom: 1rem;
-  color: var(--accent-color);
+  color: var(--accent-color); 
 }
 
 .score {
   font-size: 8rem;
   font-weight: 300;
-  color: var(--accent-color);
+  color: var(--accent-color); 
   margin-bottom: auto;
 }
 
 .player--active {
-  background-color: var(--primary-bg-color);
+  background: linear-gradient(
+    45deg,
+    #2196f3,
+    #00bcd4
+  ); 
+  box-shadow: var(--shadow-color) 0px 5px 20px; 
 }
 
 .player--active .name {
@@ -92,8 +98,13 @@ main {
 }
 
 .current {
-  background-color: var(--accent-color);
-  opacity: 0.8;
+  background: var(--accent-color); 
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); 
   border-radius: 10px;
   color: var(--text-color);
   width: 65%;
@@ -126,11 +137,11 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-  background-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--shadow-color) 0px 5px 15px;
 }
 
 .btn::first-letter {
@@ -153,7 +164,7 @@ main {
 
 .btn:active {
   transform: translate(-50%, 3px);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--shadow-color) 0px 5px 15px;
 }
 
 .btn:focus {
@@ -166,16 +177,16 @@ main {
   top: 16.5rem;
   transform: translateX(-50%);
   height: 10rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--shadow-color) 0px 5px 15px;
 }
 
 .player--winner {
-  background-color: var(--winner-bg-color);
+  background: var(--winner-bg-color); 
 }
 
 .player--winner .name {
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--text-color);
 }
 
 .hidden {
