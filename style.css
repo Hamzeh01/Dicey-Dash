@@ -61,7 +61,7 @@ main {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  transition: all 0.75s;
+  transition: all 0.8s;
   text-align: center;
 }
 
@@ -218,13 +218,24 @@ main {
   main {
     width: 90%;
   }
+
+  html {
+    font-size: 50%;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    margin-top: 0;
+    font-size: 6rem;
+  }
   .dice {
     margin-top: -20%;
     height: 5rem;
   }
-  .score {
-    margin-top: 0;
-  }
+
   .btn {
     font-size: 1rem;
     padding: 0.8rem;
