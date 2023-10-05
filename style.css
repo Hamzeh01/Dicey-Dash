@@ -202,21 +202,46 @@ main {
   display: none;
 }
 
-@media screen and (max-width: 801px) {
+@media screen and (max-width: 800px) {
   main {
-    width: 80%;
+    width: 100%;
+  }
+
+  html {
+    font-size: 60%;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .score {
+    margin-top: 0;
+    font-size: 6.5rem;
+  }
+
+  .current {
+    width: 70%;
+  }
+
+  .current-label {
+    font-size: 1.4rem;
+  }
+
+  .current-score {
+    font-size: 3.2rem;
   }
   .dice {
-    height: 6rem;
+    height: 8rem;
   }
   .btn {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   main {
-    width: 90%;
+    width: 95%;
   }
 
   html {
