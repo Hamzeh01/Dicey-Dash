@@ -7,6 +7,7 @@ Dicey Dash is a simple web-based dice game where two players compete to reach a 
 ## Table of Contents
 
 - [How to Play](#how-to-play)
+- [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
@@ -36,6 +37,10 @@ Dicey Dash is a simple web-based dice game where two players compete to reach a 
 
 6. **Winning the Game**:
    - The player who reaches or exceeds 100 points first is declared the winner.
+
+## Live Demo
+
+You can try Dicey Dash right now! Play the game in your web browser by following this [Live Demo Link](https://Hamzeh01.github.io/dicey-dash/).
 
 ## Getting Started
 
