@@ -40,7 +40,7 @@ Dicey Dash is a simple web-based dice game where two players compete to reach a 
 
 ## Live Demo
 
-You can try Dicey Dash right now! Play the game in your web browser by following this [Live Demo Link](https://Hamzeh01.github.io/dicey-dash/).
+You can try Dicey Dash right now! Play the game in your web browser by following this [Live Demo Link](https://hamzeh01.github.io/Dicey-Dash/).
 
 ## Getting Started
 
