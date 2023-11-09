@@ -259,14 +259,15 @@ main {
 
   .current {
     width: 60%;
+    text-align: center;
   }
 
   .current-label {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
 
   .current-score {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
   .dice {
     height: 7rem;
@@ -296,10 +297,12 @@ main {
 
   .current {
     width: 50%;
+    text-align: center;
   }
 
   .current-label {
     font-size: 1rem;
+    display: none;
   }
 
   .current-score {
